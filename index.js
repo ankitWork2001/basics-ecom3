@@ -11,6 +11,7 @@ import {authenticate} from "./auth.js";
 import userRouter from "./routes/user.routes.js";
 import cartRouter from "./routes/cart.routes.js";
 import productRouter from "./routes/product.routes.js";
+import wishlistRouter from "./routes/wishlist.routes.js";
 
 export const app=express();
 app.use(express.json());
@@ -39,3 +40,4 @@ connectDB().then(()=>{
 app.use("/user",userRouter);
 app.use("/cart",cartRouter);
 app.use("/product",productRouter);
+app.use("/wishlist",wishlistRouter);

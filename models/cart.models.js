@@ -4,7 +4,8 @@ import {User} from "./user.models.js"
 
 const itemSchema=new Schema({
     item_id:{
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref:"Product",
         required:true
     },
     quantity:{
@@ -15,7 +16,8 @@ const itemSchema=new Schema({
 
 const cartSchema=new Schema({
     user_id:{
-        type:String,
+        type:Schema.Types.ObjectId,
+        ref:"User",
         required:true
     },
     item:[itemSchema]

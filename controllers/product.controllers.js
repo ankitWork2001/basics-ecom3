@@ -2,7 +2,7 @@ import {Product} from '../models/product.models.js';
 
 const details=async(req,res)=>{
     const {product_id}=req.body;
-    const product=await Product.findOne({product_id});
+    const product=await Product.findById(product_id);
     if(!product)
     {
         return res.status(404).json({message:"Product not found"});
